@@ -1,0 +1,10 @@
+*.pyc
+/media/
+.db
+__pycache__/
+**/migrations/
+**/staticfiles/
+**/media/
+db.sqlite3
+farm/settings/development.py
+.env

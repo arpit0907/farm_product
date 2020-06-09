@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<h3>Delete</h3>
+<form  method="post"  enctype="multipart/form-data">
+
+{% csrf_token %}
+Are you sure you want to delete this product detail?
+<input  type="submit"  value="Submit"  />
+</form>
+</body>
+</html>

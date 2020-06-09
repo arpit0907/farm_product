@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Farm</title>
+</head>
+<body>
+       <form method="POST" enctype="multipart/form-data">
+    
+        {% csrf_token %}
+            {{form.as_p}}
+         
+            <input type="submit" name="action" class="btn btn-success">
+    </form> 
+
+</body>
+</html>

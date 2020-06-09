@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div class="container">        
+            <h2>Details</h2>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Prize</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+                   <td> {% if object.product_img  %}
+                   <a href="{% url 'product:product-detail' object.id %}">
+                   <img src="{{ object.product_img.url }}" width="400" height="200">
+                   </a>
+                   {% endif %}</td>
+                   
+                   <td>{{ object.name }}</td>
+                   <td>{{ object.quantity }}</td>
+                   <td> {{ object.prize }}</td>
+
+                  </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+
+</body>
+</html>
+
+
+
+
+ 
