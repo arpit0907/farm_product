@@ -4,7 +4,10 @@ from product.views import *
 app_name = 'product'
 
 urlpatterns = [
-   path('', SignUpCreateView.as_view(), name='signup'),
+
+   path('', index, name='index'), 
+   path('dashboard/', Dashboard.as_view(),name='dashboard'),
+   path('signup/', SignUpCreateView.as_view(), name='signup'),
    path('add/product/',ProductCreateView.as_view(),name='add-product'),
    path('product/list/',ProductListView.as_view(),name='product-list'),
    path('product/update/<int:pk>', ProductUpdateView.as_view(), name='product-update'),

@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'product',
+    
 ]
+AUTH_USER_MODEL = 'product.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -122,7 +124,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-AUTH_USER_MODEL = 'product.User'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -139,6 +140,6 @@ STATICFILES_DIRS = [
 
 #For Login 
 
-LOGIN_REDIRECT_URL = '/product/list/'
+LOGIN_REDIRECT_URL = '/'
 
 

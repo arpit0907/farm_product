@@ -8,10 +8,24 @@ from .models import Product, User
 from product.forms import ProductForm, SignUpForm
 # Create your views here.
 
+def index(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    else:
+        return redirect('product:dashboard')
+
+class Dashboard(View):
+    def get(self,request):
+        product_list = Product.objects.all()
+        context = {"product_list":product_list}
+        
+        return render(request,'registration/dashboard.html',context)
+
+
 class SignUpCreateView(CreateView):
     model = User
     form_class = SignUpForm   
-    success_url = '/product/list/'
+    success_url = '/login'
 
 class ProductCreateView(CreateView):
 

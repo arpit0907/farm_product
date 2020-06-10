@@ -25,6 +25,6 @@ urlpatterns += [
     path('admin/', admin.site.urls),
     path('', include('product.urls', namespace='product')),
 	path('login/', LoginView.as_view(template_name='registration/login.html'), name="login"),
-    path('logout/', LogoutView.as_view(template_name= 'registration/login.html'), name="logout"),
+    path('logout/', LoginView.as_view(template_name= 'registration/login.html'), name="logout"),
   
 ]

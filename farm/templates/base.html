@@ -40,83 +40,40 @@
                     </span>
                 </div>
 
-               <form method="POST" enctype="multipart/form-data" class="login100-form validate-form">
-                         {% csrf_token %}
-                       
+                <form class="login100-form validate-form">
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
                         <span class="label-input100">Username</span>
-                        {{ form.username }}
+                        <input class="input100" type="text" name="username" placeholder="Enter username">
                         <span class="focus-input100"></span>
-                    </div> 
-                   
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-                        <span class="label-input100">First Name</span>
-                        {{ form.first_name }}
-                        <span class="focus-input100"></span>
-                    </div> 
-                   
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-                        <span class="label-input100">Last Name</span>
-                        {{ form.last_name }}
-                        <span class="focus-input100"></span>
-                    </div> 
-                   
-                   <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-                        <span class="label-input100">Email</span>
-                        {{ form.email }}
-                        <span class="focus-input100"></span>
-                    </div> 
-                   
-                   <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
                         <span class="label-input100">Password</span>
-                        {{ form.password1 }}
+                        <input class="input100" type="password" name="pass" placeholder="Enter password">
                         <span class="focus-input100"></span>
-                    </div> 
-
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-                        <span class="label-input100">Confirm Password</span>
-                        {{ form.password2 }}
-                        <span class="focus-input100"></span>
-                    </div> 
-
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-                        <span class="label-input100">Address</span>
-                        {{ form.address }}
-                        <span class="focus-input100"></span>
-                    </div> 
-
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-                        <span class="label-input100">Phone Number</span>
-                        {{ form.phone_number }}
-                        <span class="focus-input100"></span>
-                    </div> 
-
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-                        <span class="label-input100">Profile Image</span>
-                        {{ form.profile_img }}
-                        <span class="focus-input100"></span>
-                    </div> 
+                    </div>
 
                     <div class="flex-sb-m w-full p-b-30">
                         <div class="contact100-form-checkbox">
                             <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-
+                            <a href="#" class="txt1">
+                                Forgot Password?
+                            </a>
                         </div>
+
                         <div>
-                            <a href="/login" class="txt1">
-                                Login
+                            <a href="#" class="txt1">
+                                Registration
                             </a>
                         </div>
                     </div>
 
                     <div class="container-login100-form-btn">
-                        <button type="submit" class="login100-form-btn">
-
-                           Sign up
+                        <button class="login100-form-btn">
+                            Login
                         </button>
                     </div>
                 </form>
-                        
             </div>
         </div>
     </div>
