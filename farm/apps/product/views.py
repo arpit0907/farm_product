@@ -29,6 +29,7 @@ class ProductCreateView(CreateView):
 class ProductListView(ListView):
     model = Product
     template_name = 'product/product_list.html'
+ 
     
   
 class ProductUpdateView(UpdateView):
