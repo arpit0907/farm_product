@@ -21,19 +21,13 @@ class SignUpForm(UserCreationForm):
         model = User
         fields = ('username', 'first_name','last_name', 'email', 'password1', 'password2','address','phone_number','profile_img')
     
-    # def __init__(self, *args, **kwargs):
-    #     super(SignUpForm, self).__init__(*args, **kwargs)
-    #     for fieldname in ['username', 'password1', 'password2']:
-    #         self.fields[fieldname].help_text = None
-    # def clean_username(self):
-    #     username = self.cleaned_data['username'].lower()
-    #     name = User.objects.filter(username=username)
-    #     if name.count():
-    #         raise  ValidationError("Username already exists")
-    #     return username
-    # def clean_email(self):
-    #     email = self.cleaned_data['email'].lower()
-    #     mail = User.objects.filter(email=email)
-    #     if mail.count():
-    #         raise  ValidationError("Email already exists")
-    #     return email
+    def __init__(self, *args, **kwargs):
+        super(SignUpForm, self).__init__(*args, **kwargs)
+        for fieldname in ['username', 'password1', 'password2']:
+            self.fields[fieldname].help_text = None
+    def clean_username(self):
+        username = self.cleaned_data['username'].lower()
+        name = User.objects.filter(username=username)
+        if name.count():
+            raise  ValidationError("Username already exists")
+        return username

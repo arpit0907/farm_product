@@ -127,13 +127,15 @@ AUTH_USER_MODEL = 'product.User'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
 
 
 MEDIA_ROOT = PROJECT_APPS.child('media')
 MEDIA_URL = '/media/'
 # Static files (CSS, JavaScript, Images, Pdf)
-STATIC_ROOT = PROJECT_APPS.child('staticfiles')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    PROJECT_APPS.child('static'),
+]
 
 #For Login 
 

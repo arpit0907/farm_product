@@ -3,16 +3,15 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render,redirect
 from django.views.generic import CreateView,ListView,UpdateView,DeleteView,DetailView
+from django.views import View
 from .models import Product, User
 from product.forms import ProductForm, SignUpForm
 # Create your views here.
 
 class SignUpCreateView(CreateView):
-
     model = User
     form_class = SignUpForm   
     success_url = '/product/list/'
-    
 
 class ProductCreateView(CreateView):
 
@@ -49,4 +48,6 @@ class ProductDetailView(DetailView):
     model = Product
     template_name = 'product/product_detail.html'
 
-
+class CustomerDataStore(View):
+    def get(self,request):
+        return render(self.request,'billing/product_bill.html')
