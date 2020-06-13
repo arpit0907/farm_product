@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div class="container">     
-<a href="/logout">logout</a>   
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+
             <h2>Product List</h2>
           <table class="table table-striped">
             <thead>
@@ -19,7 +16,7 @@
             </thead>
             <tbody>
                 {% for object in object_list %}
-            <tr>
+                  <tr>
                    <td> {% if object.product_img  %}
                    <a href="{% url 'product:product-detail' object.id %}">
                    <img src="{{ object.product_img.url }}" width="400" height="200">
@@ -33,6 +30,9 @@
                    
                   </tr>
                 {% endfor %}
-                
-</body>
-</html>
+            </tbody>
+          </table>
+
+
+
+{% endblock %}

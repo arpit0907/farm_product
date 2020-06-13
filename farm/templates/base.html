@@ -1,99 +1,105 @@
-{% load static %}
+{% load static %}  
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Shop Name</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->  
-    
-    <link rel="icon" type="image/png" href="{% static 'assets/images/icons/favicon.ico' %}"/>
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{%static 'assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/animate/animate.css' %}">
-<!--===============================================================================================-->  
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/css-hamburgers/hamburgers.min.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/animsition/css/animsition.min.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/select2/select2.min.css' %}">
-<!--===============================================================================================-->  
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/daterangepicker/daterangepicker.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/util.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css' %}">
-<!--===============================================================================================-->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Farm</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor2/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor2/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets//vendor2/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor2/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor2/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor2/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor2/aos/aos.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  
 </head>
+
 <body>
-    
-    <div class="limiter">
-        <div class="container-login100">
-            <div class="wrap-login100">
-                <div class="login100-form-title" style="background-image: url({%static 'assets/images/bg-01.jpg' %});">
-                    <span class="login100-form-title-1">
-                        Sign In
-                    </span>
-                </div>
 
-                <form class="login100-form validate-form">
-                    <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-                        <span class="label-input100">Username</span>
-                        <input class="input100" type="text" name="username" placeholder="Enter username">
-                        <span class="focus-input100"></span>
-                    </div>
-
-                    <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-                        <span class="label-input100">Password</span>
-                        <input class="input100" type="password" name="pass" placeholder="Enter password">
-                        <span class="focus-input100"></span>
-                    </div>
-
-                    <div class="flex-sb-m w-full p-b-30">
-                        <div class="contact100-form-checkbox">
-                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                            <a href="#" class="txt1">
-                                Forgot Password?
-                            </a>
-                        </div>
-
-                        <div>
-                            <a href="#" class="txt1">
-                                Registration
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
-                            Login
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+  <!-- ======= Header ======= -->
+   {% include "layout/top-menu.html" %} 
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="400">
     </div>
+  </section><!-- End Hero -->
+   {% block content %}{% endblock %}  
+  
+
+    <!-- ======= Clients Section ======= -->
     
-<!--===============================================================================================-->
-    <script src="{% static 'assets/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-<!--===============================================================================================-->
-    <script src="{% static 'assets/vendor/animsition/js/animsition.min.js' %}"></script>
-<!--===============================================================================================-->
-    <script src="{% static 'assets/vendor/bootstrap/js/popper.js' %}"></script>
-    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-<!--===============================================================================================-->
-    <script src="{% static 'assets/vendor/select2/select2.min.js' %}"></script>
-<!--===============================================================================================-->
-    <script src="{% static 'assets/vendor/daterangepicker/moment.min.js' %}"></script>
-    <script src="{% static 'assets/vendor/daterangepicker/daterangepicker.js' %}"></script>
-<!--===============================================================================================-->
-    <script src="{% static 'assets/vendor/countdowntime/countdowntime.js' %}"></script>
-<!--===============================================================================================-->
-    <script src="{% static 'assets/js/main.js' %}"></script>
+    <!-- ======= About Section ======= -->
+    
+    <!-- ======= Counts Section ======= -->
+    <!-- End Counts Section -->
+
+    <!-- ======= Why Us Section ======= -->
+   <!-- End Why Us Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <!-- End Cta Section -->
+
+    <!-- ======= Services Section ======= -->
+    <!-- End Services Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+   <!-- End Portfolio Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+   <!-- End Testimonials Section -->
+
+    <!-- ======= Team Section ======= -->
+  <!-- End Team Section -->
+
+    <!-- ======= Contact Section ======= -->
+<!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  {% include "layout/footer.html" %}
+  <!-- End Footer -->
+
+<!--   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+ -->
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor2/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor2/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor2/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/vendor2/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor2/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'assets/vendor2/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'assets/vendor2/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor2/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor2/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/vendor2/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/mmain.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
+  {% block script %}{% endblock %}
 
 </body>
+
 </html>

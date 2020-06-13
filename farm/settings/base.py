@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'product',
+
+    #3rd party
+    'widget_tweaks',
     
 ]
 AUTH_USER_MODEL = 'product.User'
