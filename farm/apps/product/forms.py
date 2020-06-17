@@ -1,5 +1,5 @@
 from django import forms 
-from product.models import Product, User
+from product.models import Product, User, CustomeDetailBill
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 # from bootstrap_datepicker_plus import DatePickerInput
@@ -31,3 +31,9 @@ class SignUpForm(UserCreationForm):
         if name.count():
             raise  ValidationError("Username already exists")
         return username
+
+class CustomerBillForm(forms.ModelForm):
+
+    class Meta:
+        model = CustomeDetailBill
+        fields = ('__all__')

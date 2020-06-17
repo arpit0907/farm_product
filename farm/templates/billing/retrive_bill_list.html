@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+{% load custome %}
+<head>
+    <title>Farm</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- toster jsvs script-->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+    <!-- End toster jsvs script-->
+
+</head>
+<body>
+
+<div id="invoice">
+<div class="toolbar hidden-print">
+    <div class="text-right">
+        <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
+    </div>
+    <hr>
+</div>
+<div class="container">
+    <div class="card-header">
+        Invoice
+        <strong>Saturday 13/06/2020, 20:58:40</strong> 
+
+    </div>
+    <div class="card-body">
+    <div class="row mb-4">
+    <div class="col-sm-6">
+    <h6 class="mb-3">From:</h6>
+    <div>
+    <strong>Webz Poland</strong>
+    </div>
+    <div>Madalinskiego 8</div>
+    <div>71-101 Szczecin, Poland</div>
+    <div>Email: info@webz.com.pl</div>
+    <div>Phone: +48 444 666 3333</div>
+    </div>
+
+    </div>
+    <div class="card-header">
+        
+        <strong>Customer Information</strong> 
+          
+
+          
+    </div>
+<br>
+<form method="POST">
+    <input type="hidden" name="csrfmiddlewaretoken" value="0mwhypZpGFqmaBzOfrWUNDGcWr1KoQvU3TrW7AJEiNMLX4mqWo0uaMSi4ll5g47r">
+     
+<div class="row">
+<div class="col-sm-6">
+    <label for="male">Custome Name</label> : {{cust_bill.customer_name}}
+</div>
+<div class="col-sm-6">
+    <label for="male">Customer Address</label> : {{cust_bill.customer_address}}
+</div>
+<div class="col-sm-6">
+    <label for="male">Customer Number</label>: {{cust_bill.customer_number}}
+</div>
+
+</div>
+
+
+<br>
+
+    <div class="table-responsive-sm">
+                          <table class="table table-striped" id="tab_logic">
+                            <thead>
+                              <tr>
+                                <th class="text-center"> # </th>
+                                <th class="text-center"> Product </th>
+                                <th class="text-center"> Qty </th>
+                                <th class="text-center"> Price </th>
+                                <th class="text-center"> Total </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+   						{% filter_bill cust_bill as bills %}	
+   							{% for bill in bills %}
+                              <tr id='addr0'>
+                                <td class="text-center">{{ forloop.counter }}</td>
+
+                                <td class="text-center">{{bill.product_list}}</td>
+                                
+                                <!--<td><input type="text" name='product[]'  placeholder='Enter Product Name' class="form-control"/></td>-->
+                                <td class="text-center">{{bill.quantity_list}}</td>
+                                <td class="text-center">{{bill.unit_price_list}}</td>
+                                <td class="text-center">{{bill.total_list}}</td>
+                              </tr>
+                              <tr id='addr1'></tr>
+                              {% endfor %}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      
+                      <div class="row clearfix" style="margin-top:20px">
+                        <div class="col-lg-4 col-sm-5 ml-auto">
+                          <table class="table table-clear" id="tab_logic_total">
+                            <tbody>
+                              <tr>
+                                <th class="text-center">Sub Total</th>
+                                <td class="text-center">{{cust_bill.sub_amount}}</td>
+                              </tr>
+                              <tr>
+                                <th class="text-center">CGST</th>
+                                <td class="text-center">0%</td>
+                              </tr>
+                              <tr>
+                                <th class="text-center">CGST Tax Amount</th>
+                                <td class="text-center">0</td>
+                              </tr>
+                              <tr>
+                                <th class="text-center">Grand Total</th>
+                                <td class="text-center">{{cust_bill.total_amount}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                        </div>
+</div>
+    </div>
+    </div>
+    <button type="submit">Submit</button>
+    </form> 
+
+</body>
+<script type="text/javascript">
+ $('#printInvoice').click(function(){
+            Popup($('.invoice'));
+            function Popup(data) 
+            {
+                window.print();
+                return true;
+            }
+        });
+</script>
+</html>
+

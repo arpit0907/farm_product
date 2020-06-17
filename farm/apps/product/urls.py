@@ -11,4 +11,6 @@ urlpatterns = [
    path('product/delete/<int:pk>', ProductDeleteView.as_view(), name='product-delete'), 
    path('product/detail/<int:pk>', ProductDetailView.as_view(), name='product-detail'),
    path('create_bill/', CustomerDataStore.as_view(), name='create_bill'), 
+   path('retrive_bill/<int:pk>/', RetriveBillData.as_view(), name='retrive_bill'), 
+   path('bills/', BillList.as_view(), name='bills'), 
   ] 
